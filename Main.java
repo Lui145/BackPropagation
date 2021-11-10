@@ -50,28 +50,23 @@ public class Main {
 		
 		Punto [] pPruebas = new Punto[2];
 		
-		pPruebas[0] = new Punto(1 + Math.random()*2-1, 3 + Math.random()*2-1);
-		
-		x[0] = pPruebas[0].x;
-		x[1] = pPruebas[0].y;
-		
-		System.out.println("Punto 1  X = " + x[0] + " Y = " + x[1]);
-		System.out.println(Math.hypot(x[0]-clases[0][0], x[1]-clases[0][1]));
-		System.out.println(Math.hypot(x[0]-clases[1][0], x[1]-clases[1][1]));
-		y = rn.clasificar(x);
-		System.out.println("Clase 1: " + y[0] + "\n" +
-							"Clase 2: " + y[1] + "\n");
-		
-		pPruebas[1] = new Punto(3 + Math.random()*2-1, 1 + Math.random()*2-1);
-		x[0] = pPruebas[1].x;
-		x[1] = pPruebas[1].y;
-		
-		System.out.println("Punto 2  X = " + x[0] + " Y = " + x[1]);
-		System.out.println(Math.hypot(x[0]-clases[0][0], x[1]-clases[0][1]));
-		System.out.println(Math.hypot(x[0]-clases[1][0], x[1]-clases[1][1]));
-		y = rn.clasificar(x);
-		System.out.println("Clase 1: " + y[0] + "\n" +
-							"Clase 2: " + y[1]);
+		pfor(int i = 0; i < 4; i+=2) {
+			Punto p = new Punto(1 + Math.random()*2-1, 3 + Math.random()*2-1);
+			x[0] = p.x;
+			x[1] = p.y;
+			System.out.println("Punto " + i + " X = " + x[0] + " Y = " + x[1]);
+			y = rn.clasificar(x);
+			System.out.println("Clase 1: " + y[0] + "\n" +
+								"Clase 2: " + y[1] + "\n");
+			
+			p = new Punto(3 + Math.random()*2-1, 1 + Math.random()*2-1);
+			x[0] = p.x;
+			x[1] = p.y;
+			System.out.println("Punto " + i + " X = " + x[0] + " Y = " + x[1]);
+			y = rn.clasificar(x);
+			System.out.println("Clase 1: " + y[0] + "\n" +
+								"Clase 2: " + y[1] + "\n");
+		}
 	}
 
 }
